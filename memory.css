@@ -1,0 +1,160 @@
+html {
+	background-color: #273E3C;
+}
+
+h1 {
+	text-align: center;
+	font-size: 72px;
+	color: white;
+	font-family: 'Aclonica', sans-serif;
+	position: relative;
+	z-index: 99999;
+}
+
+#wrapper {
+	width: 1280px;
+	height: 700px;
+}
+
+#sideBar {
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+
+#buttonsRow {
+	height: 20%;
+	margin-left: 26%;
+}
+
+.textRow {
+	height: 15%;
+	margin-left: 26%;
+}
+
+.textRow span,label {
+	color: white;
+	font-size: 32px;
+	line-height: 36px;
+	vertical-align: middle;
+}
+
+#scoreChange {
+	margin-left: 15px;
+	font-size: 36px;
+
+	-webkit-transition:0.2s linear all;
+    -moz-transition:0.2s linear all;
+	-o-transition:0.2s linear all;
+	transition:0.2s linear all;
+}
+
+#reset {
+	margin-right: 35px;
+}
+
+#peek {
+	z-index: 99999;
+}
+
+#container {
+	float: right;
+	margin-top: 46px;
+	height: 100%;
+	width: 55%;
+}
+
+.square {
+	background-color: #151515;
+	opacity: .5;
+	width: 100px;
+	height: 130px;
+	margin: 20px 10px;
+	float: left;
+	text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 99999;
+
+    -moz-box-shadow: 0 0 2px 2px #888;
+	-webkit-box-shadow: 0 0 2px 2px #888;
+	box-shadow: 0 0 2px 2px #888;
+
+    -webkit-transition:0.2s linear all;
+    -moz-transition:0.2s linear all;
+	-o-transition:0.2s linear all;
+	transition:0.2s linear all;
+}
+
+.square.peek {
+	background-color: white !important;
+
+	-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.darken {
+	box-shadow: 0 25px 50px -25px rgba(0, 0, 0, .7) inset;
+}
+
+.button {
+	width: 100px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 20px;
+	float: left;
+	font-family: 'Aclonica', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	position: relative;
+
+	background-color: #987B65;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#987B65), to(#462912));
+  	background-image: -moz-linear-gradient(top, #987B65, #462912);
+  	background-image: -ms-linear-gradient(top, #987B65, #462912);
+  	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #987B65), color-stop(100%, #987B65));
+  	background-image: -webkit-linear-gradient(top, #987B65, #462912);
+  	background-image: -o-linear-gradient(top, #987B65, #462912);
+  	background-image: linear-gradient(#987B65, #462912);
+}
+
+.button.disabled {
+	background-color: #ddd;
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#ddd), to(#333));
+  	background-image: -moz-linear-gradient(top, #ddd, #333);
+  	background-image: -ms-linear-gradient(top, #ddd, #333);
+  	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ddd), color-stop(100%, #ddd));
+  	background-image: -webkit-linear-gradient(top, #ddd, #333);
+  	background-image: -o-linear-gradient(top, #ddd, #333);
+  	background-image: linear-gradient(#ddd, #333);
+}
+
+#timerRow {
+	position: relative;
+	z-index: 99999;
+}
+
+#overlay {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+
+    -webkit-transition:all linear 0.5s;
+	-moz-transition:all linear 0.5s;
+	-o-transition:all linear 0.5s;
+	transition:all linear 0.5s;
+}
+
+.ngdialog {
+	z-index: 200000 !important;
+}

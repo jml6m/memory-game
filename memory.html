@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="memory">
+  <head>
+    <meta charset="utf-8" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="memory.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.12/css/ngDialog-theme-default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.12/css/ngDialog.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.3.12/js/ngDialog.min.js"></script>
+
+    <script type="text/ng-template" id="dialogTemplate">
+      <div class="ngdialog-message">
+        <h2>Congratulations, You Won!</h2>
+        <p>Your current score is <strong>{{score}}</strong>.<br />
+            Your high score is <strong>{{highScore}}</strong>.<p>
+      </div>
+    </script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <div id="overlay" ng-show="timerActive"></div> 
+    <div id="wrapper">
+      <div id="sideBar">
+        <h1>Memory</h1>
+        <div id="buttonsRow">
+          <div id="reset" class="button" ng-click="reset()" ng-mousedown="dark1=true" ng-mouseup="dark1=false" ng-class="{'darken': dark1==true}">Reset</div>
+          <div id="peek" class="button" ng-click="peek()" ng-class="{'disabled': peekLock==true}">Peek</div>
+        </div>
+        <div class="textRow">
+          <label>High Score: </label>
+          <span id="highScoreText">{{highScore}}</span>
+        </div>
+        <div class="textRow">
+          <label>Current Score: </label>
+          <span id="currentScoreText">{{score}}</span>
+          <span id="scoreChange" ng-show="scoreChanged != 0" ng-style="{ 'color': scoreChanged > 0 ? 'darkgreen' : 'maroon'}"><strong>{{ scoreChanged > 0 ? '+' + scoreChanged : scoreChanged}}</strong></span>
+        </div>
+        <div id="timerRow" class="textRow" ng-show="timerActive">
+          <label>Timer: </label>
+          <span id="timerText">0</span>
+        </div>
+      </div>
+
+      <div id="container">
+        <div hover-directive ng-repeat="square in squares" class="square" ng-style="{ 'background-color': square.flipped ? square.color : ''}" ng-class="{ 'peek': timerActive==true }" ng-click="toggle(square)" />
+      </div>
+    </div>
+  </body>
+</html>
