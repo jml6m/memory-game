@@ -45,7 +45,7 @@
       </div>
 
       <div id="container">
-        <div hover-directive ng-repeat="square in squares" class="square" ng-style="{ 'background-color': square.flipped ? square.color : ''}" ng-class="{ 'peek': timerActive==true }" ng-click="toggle(square)" />
+        <div hover-directive ng-repeat="square in squares" class="square" ng-style="{ 'background-color': square.flipped ? square.color : ''}" ng-class="{ 'peek': timerActive==true && !square.flipped }" ng-click="toggle(square)" />
       </div>
     </div>
   </body>

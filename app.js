@@ -128,7 +128,7 @@ app.directive('hoverDirective', function () {
         link: function ($scope, element, attrs) {
             var square = element.scope().square;
             element.bind('mouseenter', function () {
-                if($scope.timerActive) {
+                if($scope.timerActive && !square.flipped) {
                     element.removeClass('peek');
                     element.css('background-color', square.color);
                 }
@@ -138,8 +138,8 @@ app.directive('hoverDirective', function () {
                 * Small hack added to this if-check, handles case where
                 * timer hits zero before mouseleave event occurs
                 */
-                if($scope.timerActive ||
-                        ((element.css('background-color') != '#151515') && !square.flipped)) {
+                if(!square.flipped &&
+                        ((element.css('background-color') != '#151515') || $scope.timerActive)) {
                     //Keep this if-check
                     if($scope.timerActive)
                         element.addClass('peek');
