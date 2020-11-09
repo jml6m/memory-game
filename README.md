@@ -23,7 +23,3 @@ This app was built to serve as an AngularJS demo - no jQuery or javascript heade
 * **CSS**
   * Transitions (linear) used on square "flipping", as well as endgame dimming overlay
   * Effects: Box shadow used on squares, blur effect used on squares when 'Peek' enabled, gradients used on buttons
-
-
-## Contact
-Any questions can be directed to jlewkovich@mozzor.com
