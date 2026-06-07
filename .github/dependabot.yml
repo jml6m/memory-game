@@ -1,0 +1,46 @@
+# Dependabot configuration for jml6m/memory-game
+# Docs: https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# Audit note (2026-06-07):
+# This repo currently ships no package manifest (no package.json / lockfile).
+# AngularJS and ngDialog are loaded from public CDNs in memory.html, which
+# Dependabot cannot scan. The `npm` block below is left commented as a
+# template for when/if this project migrates to a bundler.
+version: 2
+updates:
+  # Keep any GitHub Actions used in workflows up to date.
+  # Currently no workflows exist, but enabling this preemptively means
+  # any Action added later (incl. an advanced CodeQL workflow) will be
+  # auto-patched.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    # Optional: Dependabot only applies labels that already exist in the repo.
+    # labels:
+    #   - "dependencies"
+    #   - "github-actions"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
+  # Template — uncomment once a package.json is added to the repo root.
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   open-pull-requests-limit: 10
+  #   labels:
+  #     - "dependencies"
+  #     - "javascript"
+  #   commit-message:
+  #     prefix: "chore(deps)"
+  #     prefix-development: "chore(deps-dev)"
+  #     include: "scope"
+  #   groups:
+  #     # Batch minor/patch bumps into a single PR to reduce noise.
+  #     minor-and-patch:
+  #       update-types:
+  #         - "minor"
+  #         - "patch"
